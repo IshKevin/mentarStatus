@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\subscriberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get("/",[subscriberController::class,'index'])->name('subscribe');
+Route::get("/subscribe",[subscriberController::class,'create'])->name('thanks');
+Route::post("/",[subscriberController::class,'store'])->name('subscribe');
 Route::get("/test", function(){
     return view('thanks');
 });
