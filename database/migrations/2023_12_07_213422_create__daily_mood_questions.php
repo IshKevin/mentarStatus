@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subscribers', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique();
-            $table->string('email')->unique();
+        Schema::create('_daily_mood_questions', function (Blueprint $table) {
+            $table->id('question_id')->autoIncrement()->unique();
+            $table->string('question_text');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subscribers');
+        Schema::dropIfExists('_daily_mood_questions');
     }
 };
