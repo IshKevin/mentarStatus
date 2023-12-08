@@ -263,9 +263,21 @@ input[type="submit"] {
        📧 Enter your email below to subscribe and receive your daily mental health check-in and a weekly report tailored to your well-being. 📈📆
        🚀 Let's embark on this path to a healthier, happier you together. Subscribe now and start your mental health journey with us! 🌈💻💌🌻
       </p>
-      <form action="/test" method="post">
-         @csrf
-        <input type="email" required name="email" id="email" placeholder="Enter your email">
+      <form action="{{route('subscribe')}}" method="post">
+        @csrf
+        @method('post')
+        <div>
+          @if($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach($errors->all() as $error)
+              <li>{{$error}}</li>
+              @endforeach
+            </ul>
+            @endif
+        </div>
+        <br/>
+        <input type="email"  name="email" id="email" placeholder="Enter your email">
         <input type="submit"  value="Subscribe">
       </form> 
     </div>
