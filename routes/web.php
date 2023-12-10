@@ -31,7 +31,10 @@ Route::get('send-mail', function () {
         http://dailymail.test/subscribe '
     ];
 
-    Mail::to('carterk279@gmail.com')->send(new \App\Mail\MyMail($details));
+    $users = \App\Models\Subscriber::all();
+    foreach($users as $user){
+        Mail::to($user->email)->send(new \App\Mail\MyMail($details));
+    }
 
     dd("Email is Sent.");
 });
