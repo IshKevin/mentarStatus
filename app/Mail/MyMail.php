@@ -31,7 +31,7 @@ class MyMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'My Mail',
+            subject: 'Daily email for health check-up',
         );
     }
 
