@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\subscriberController;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,17 @@ Route::get("/subscribe",[subscriberController::class,'create'])->name('thanks');
 Route::post("/",[subscriberController::class,'store'])->name('subscribe');
 Route::get("/test", function(){
     return view('thanks');
+});
+
+Route::get('send-mail', function () {
+
+    $details = [
+        'title' => 'Daily email for health check-up',
+        'body' => 'please check your health status by following the link below
+        http://dailymail.test/subscribe '
+    ];
+
+    Mail::to('carterk279@gmail.com')->send(new \App\Mail\MyMail($details));
+
+    dd("Email is Sent.");
 });
