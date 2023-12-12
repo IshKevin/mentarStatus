@@ -20,8 +20,10 @@ Route::get("/",[subscriberController::class,'index'])->name('subscribe');
 Route::get("/subscribe",[subscriberController::class,'create'])->name('thanks');
 Route::post("/",[subscriberController::class,'store'])->name('subscribe');
 Route::get("/test", function(){
-    return view('thanks');
+    return view('Question');
 });
+
+Route::get("/unsubscribe/{id}",[subscriberController::class,'destroy'])->name('unsubscribe');
 
 Route::get('send-mail', function () {
 
