@@ -6,7 +6,7 @@
 <body>
     <h1>{{ $details['title'] }}</h1>
     <p>{{ $details['body'] }}</p>
-     <p>u can visit rwanda on this link <a href="https://walkerworld.ai/"></a>visit rwanda</p>
+     <p>u can visit our website for more details</p>
     <p>Thank you</p>
 </body>
 </html>
