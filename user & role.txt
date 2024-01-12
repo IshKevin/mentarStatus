@@ -1,0 +1,22 @@
+Patiente
+ - subscribe
+ - report
+ - navigate web
+ - read news
+Docter
+ - patients
+ - report of patients when he clicked on them
+ - add question
+ - update questions
+SUperVisor
+ -view doctor
+ -view patient
+ - apporve doctor
+
+ Pages
+ ........................
+ start
+ -home -from v0
+ 
+
+
