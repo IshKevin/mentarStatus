@@ -54,6 +54,9 @@ a:hover {
 .nav-link li{
   list-style: none;
   margin-right: 0.7rem;
+  display: flex;
+  flex-direction: row;
+
 }
 
 
@@ -75,7 +78,7 @@ a:hover {
   flex-grow: 2;
   width: 60%;
   padding: 0.3rem;
-  
+
 }
 
 .home-prag div{
@@ -112,7 +115,7 @@ a:hover {
  top: 50%;
  left: 50%;
  transform: translate(-50%,-50%);
-  
+
 }
 /* #home img{
   width: 3rem;
@@ -120,7 +123,7 @@ a:hover {
 } */
 
 /* #home figure{
- flex: 1; 
+ flex: 1;
 }
 
 */
@@ -146,13 +149,17 @@ a:hover {
 footer{
   background-color: #007bff;
 }
+#nav-link{
+    display: flex;
+    flex-direction: column;
+}
 
 @media screen and (max-width:800px) {
   #home{
     display: flex;
     margin: 1rem;
   }
-  
+
   .home-prag{
     flex-wrap: wrap;
   }
@@ -163,18 +170,18 @@ footer{
 }
 
 @media screen and(max-width:768x) {
-  
+
 }
 
 @media screen and(max-width:922px) {
-  
+
 }
 @media screen and(max-width:1200px) {
-  
+
 }
 
 .welcome {
-  
+
   height: 100vh;
   background-image: url('./bg.jpg');
   background-size: cover;
@@ -244,6 +251,9 @@ input[type="submit"] {
   margin-bottom: 0.2rem;
 }
 
+.navigator{
+    display: grid;
+}
 /* Tablet and PC styles - Adjust as needed */
 @media screen and (min-width: 768px) {
   .welcome {
@@ -251,10 +261,24 @@ input[type="submit"] {
   }
 }
 
+
+
    </style>
   </head>
   <body>
-    <section class="welcome">
+    <header class="header">
+      <h1>E-HealthChecks</h1>
+      <nav class="nav-link" style="display: flex; justify-content: space-around; list-style-type: none;">
+        <ul class="nivigator">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ route('admin') }}">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="welcome"
+    id="home">
      <div class="dmc-Pragragraphy">
         <h1 class="homeLog">E-HC</h1>
         <h1 class="homeTitle">E-HealthChecks</h1>
@@ -279,7 +303,7 @@ input[type="submit"] {
         <br/>
         <input type="email"  name="email" id="email" placeholder="Enter your email">
         <input type="submit"  value="Subscribe">
-      </form> 
+      </form>
     </div>
     <div class="navLink">
       <ul>
@@ -288,6 +312,9 @@ input[type="submit"] {
         <li><a href="">Terms of Use</a></li>
       </ul>
     </div>
+    </section>
+    <section id="About">
+
     </section>
     </body>
     </html>
