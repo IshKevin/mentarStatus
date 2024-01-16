@@ -44,3 +44,7 @@ Route::get('send-mail', function () {
 Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
+
+Route::get('/admin/login', function () {
+    return view('admin.login');
+})->name('admin.login');
