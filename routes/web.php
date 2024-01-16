@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\subscriberController;
 use Illuminate\Support\Facades\Mail;
+use App\Models\User;
+use App\Models\Subscriber;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +47,7 @@ Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
 
-Route::get('/admin/login', function () {
-    return view('admin.login');
-})->name('admin.login');
+Route::get('/Dashboard', function () {
+    $subscribers = Subscriber::all();
+    return view('Dashboard', ['subscribers' => $subscribers]);
+})->name('Dashboard');

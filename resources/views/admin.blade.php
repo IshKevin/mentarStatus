@@ -61,7 +61,7 @@
     <section>
         <div class="container">
             <h1>Log In </h1>
-            <form action="{{ route('admin.login') }}" method="POST">
+            <form action="{{ route('Dashboard') }}" method="GET">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
